@@ -12,7 +12,11 @@ install_comfyui() {
     echo "Installing ComfyUI"
     cd /workspace
     pip install comfy-cli
-    comfy --here --skip-prompt install --nvidia
+    if [ -d "/workspace/ComfyUI" ]; then
+        comfy --here --skip-prompt install --nvidia --restore
+    else
+        comfy --here --skip-prompt install --nvidia
+    fi
     echo "ComfyUI installed"
 }
 
