@@ -1,0 +1,8 @@
+services:
+  comfyui:
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - DEVCONTAINER=TRUE

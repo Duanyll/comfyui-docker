@@ -1,0 +1,33 @@
+{
+    "name": "ComfyUI",
+    "dockerComposeFile": [ "../docker-compose.yml", "./docker-compose.extend.yml" ],
+    "service": "comfyui",
+    "workspaceFolder": "/workspace/ComfyUI",
+    "shutdownAction": "stopCompose",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                "python.terminal.launchArgs": [ "--listen" ],
+                "remote.autoForwardPorts": false
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.autopep8",
+                "KevinRose.vsc-python-indent",
+                "Rubymaniac.vscode-paste-and-indent",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "GitHub.copilot",
+                "ms-vscode.hexeditor",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.tensorboard",
+                "ms-python.black-formatter"
+            ]
+        }
+    },
+    "remoteUser": "comfy",
+    "hostRequirements": {
+        "gpu": true
+    }
+}
