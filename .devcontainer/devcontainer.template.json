@@ -7,7 +7,6 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "python.defaultInterpreterPath": "/opt/conda/bin/python",
                 "python.terminal.launchArgs": [ "--listen" ],
                 "remote.autoForwardPorts": false
             },
@@ -26,7 +25,7 @@
             ]
         }
     },
-    "remoteUser": "comfy",
+    "remoteUser": "%USER_NAME%",
     "hostRequirements": {
         "gpu": true
     }

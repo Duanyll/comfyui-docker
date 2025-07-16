@@ -11,6 +11,6 @@
 
 ## 使用方法
 
-运行 `up.sh` 脚本启动容器. 默认会在当前目录下创建 `workspace` 文件夹用于挂载 ComfyUI 代码仓库. ComfyUI 对外端口为 10001, FileBrowser 为 10002.
+运行 `container.sh` 脚本启动容器. 默认会在当前目录下创建 `workspace` 文件夹用于挂载 ComfyUI 代码仓库. ComfyUI 对外端口为 10001, FileBrowser 为 10002.
 
 要调试代码，使用 VSCode 打开本文件夹，然后按 F1 打开命令面板，输入 `Remote-Containers: Reopen in Container` 即可. 按 F5 开始调试.

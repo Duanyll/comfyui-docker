@@ -11,7 +11,9 @@ fix_permission() {
 install_comfyui() {
     echo "Installing ComfyUI"
     cd /workspace
-    pip install comfy-cli
+    uv venv --python=3.12
+    source .venv/bin/activate
+    uv pip install comfy-cli
     if [ -d "/workspace/ComfyUI" ]; then
         comfy --here --skip-prompt install --nvidia --restore
     else
@@ -25,18 +27,14 @@ fix_permission ~/.cache
 fix_permission ~/.cache/huggingface
 fix_permission /workspace
 
-# Make sure ~/.local/bin is in PATH. If not, mkdir and add to PATH
-if [ ! -d ~/.local/bin ]; then
-    mkdir -p ~/.local/bin
-    echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
-    source ~/.bashrc
-fi
-
 # If /workspace/ComfyUI not exists, install ComfyUI
 if [ ! -f "/workspace/.comfyui_installed" ]; then
     install_comfyui
     touch /workspace/.comfyui_installed
 fi
+
+cd /workspace
+source .venv/bin/activate
 
 if [ -n "$DEVCONTAINER" ]; then
     echo "Running in DEVCONTAINER mode"
