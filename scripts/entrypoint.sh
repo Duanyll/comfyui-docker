@@ -11,8 +11,10 @@ fix_permission() {
 install_comfyui() {
     echo "Installing ComfyUI"
     cd /workspace
-    uv venv --python=3.12
+    cp /scripts/pyproject.toml /workspace/
+    uv sync
     source .venv/bin/activate
+    uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
     uv pip install comfy-cli
     if [ -d "/workspace/ComfyUI" ]; then
         comfy --here --skip-prompt install --nvidia --restore

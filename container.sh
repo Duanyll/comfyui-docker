@@ -138,8 +138,7 @@ DEV_CONTAINER_JSON=".devcontainer/devcontainer.json"
 DOCKER_COMPOSE_TEMPLATE="docker-compose.template.yml"
 DOCKER_COMPOSE_FILE="docker-compose.yml"
 
-# Get the repository directory name
-REPO_DIR=$(basename "$(pwd)")
+REPO_DIR=$(pwd)
 
 # Get python version from .python-version file
 PYTHON_VERSION=$(cat .python-version)
